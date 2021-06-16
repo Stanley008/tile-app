@@ -5,7 +5,7 @@
 <h2> Tile Calculator to the Rescue.</h2>
 <h3> We are here to help you with your calculations.</h3>
     
-    <Calculations msg="Welcome to Your Vue.js App"/>
+    <Calculations msg="Welcome to Tile Calculator"/>
 
   </div>
 </template>

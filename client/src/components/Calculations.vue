@@ -1,6 +1,11 @@
 <template>
   <div class="container">
     <h1>Latest Calculations</h1>
+    <div class="create-calculation">
+      <label for="create-calculation"> Enter New Calculation Data: </label>
+      <input type="text" id="create-calculation" v-model="text" placeholder="Create Calculation">
+<button v-on:click="createCalculation">Calculate</button>
+    </div>
 <!-- create calculations here -->
 <hr>
 <p class="error" v-if="error">{{error}}</p>
@@ -11,7 +16,7 @@
   v-bind:index="index"
   v-bind:key="calculation._id"
   >
-  {{`${calculation.createdAt.getHours()}:${calculation.createdAt.getMinutes()} ${calculation.createdAt.getDate()}.${calculation.createdAt.getMonth()}.${calculation.createdAt.getFullYear()}`}}
+  {{`${calculation.createdAt.getHours()}:${calculation.createdAt.getMinutes()} ${calculation.createdAt.getDate()}.${calculation.createdAt.getMonth()+1}.${calculation.createdAt.getFullYear()}`}}
   <p class="text"> {{calculation.text}}</p>
   </div>
   </div>
@@ -35,15 +40,17 @@ export default {
   async created(){
     try {
 this.calculations = await RouteService.getCalculations();
-    }
-    catch(err) {
+    } catch(err) {
       this.error = err.message;
   }
-  // props: {
-  //   msg: String
-  // }
+},
+methods: {
+async createCalculation(){
+  await RouteService.insertCalculation(this.text)
+  this.calculations = await RouteService.getCalculations();
 }
-}
+},
+};
 </script>
 
 
