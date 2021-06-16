@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Latest Calculations</h1>
+    
     <div class="create-calculation">
       <label for="create-calculation"> Enter New Calculation Data: </label>
       <input type="text" id="create-calculation" v-model="text" placeholder="Create Calculation">
@@ -8,6 +8,7 @@
     </div>
 <!-- create calculations here -->
     <hr>
+    <h1>Latest Calculations</h1>
     <p class="error" v-if="error">{{error}}</p>
     <div class="calculations-container">
       <div class="calculation"
@@ -16,11 +17,11 @@
         v-bind:index="index"
         v-bind:key="calculation._id"
         v-on:dblclick="deleteCalculation(calculation._id)"
-
       >
+      
         {{`${calculation.createdAt.getHours()}:${calculation.createdAt.getMinutes()} - ${calculation.createdAt.getDate()}
         .${calculation.createdAt.getMonth()+1}.${calculation.createdAt.getFullYear()}`}}
-        <p class="text"> {{ calculation.text }}</p>
+        <p class="text"> {{ calculation.text }} </p>
       </div>
     </div>
   </div>
