@@ -15,7 +15,8 @@
         v-bind:item="calculation"
         v-bind:index="index"
         v-bind:key="calculation._id"
-        v-on:dbclick="deleteCalculation(calculation._id)"
+        v-on:dblclick="deleteCalculation(calculation._id)"
+
       >
         {{`${calculation.createdAt.getHours()}:${calculation.createdAt.getMinutes()} - ${calculation.createdAt.getDate()}
         .${calculation.createdAt.getMonth()+1}.${calculation.createdAt.getFullYear()}`}}

@@ -32,9 +32,15 @@ class RouteService {
     //where is fault ? ? ? ?
     //Delete Calculations
     static deleteCalculation(id) {
+
+        // static deleteCalculation(_id) {
+        // static deleteCalculation(calculation) {
+      
         return axios.delete(`${url}${id}`);
         // return axios.delete(`${url}+${id}`);
+        // return axios.delete(`${URL}+${id}`);
         // return axios.delete({url}+ {id});
+        // return axios.delete(url+ id);
     }
 };
 
