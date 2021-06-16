@@ -62,7 +62,7 @@ p.error {
   margin-bottom: 20px;
 }
 
-div.post {
+div.calculation {
   position: relative;
   border: 2px solid #21c1e9;
   background-color: #94c5fd;

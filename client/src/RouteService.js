@@ -1,4 +1,4 @@
-import { post } from "got";
+import { calculation } from "got";
 import axios from "axios";
 
 const url = "http://localhost:5000/api/calculations/";
@@ -11,9 +11,9 @@ try {
     const res = await axios.get(url);
     const data = res.data;
     resolve(
-        data.map(post => ({
-        ...post,
-        createdAt: new Date(post.createdAt)
+        data.map(calculation => ({
+        ...calculation,
+        createdAt: new Date(calculation.createdAt)
         }))
     );
     } catch (err) {
@@ -25,14 +25,14 @@ reject(err);
 
     //Create Post will take only 1 parameter? 
     static insertCalculations(text){
-return axios.post(url, {
+return axios.calculation(url, {
     
     
 text
     });
 }
     //Delete Post
-    static deletePost(id){
+    static deleteCalculation(id){
         return axios.delete(`${url}${id}`);
     }
 }
