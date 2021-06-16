@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
     text: req.body.text,
     createdAt: new Date()
   });
-  res.status(201).send();
+  res.status(201).send({});
 });
 
 // // Delete Calculation
