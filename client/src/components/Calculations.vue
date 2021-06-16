@@ -64,8 +64,8 @@ p.error {
 
 div.calculation {
   position: relative;
-  border: 2px solid #21c1e9;
-  background-color: #94c5fd;
+  border: 2px solid #00f7ff;
+  background-color: #b5f8fd;
   padding: 15px 15px 25px 15px;
   margin-bottom: 15px;
 }
@@ -75,7 +75,7 @@ div.created-at{
   top: 0;
   left: 0;
   padding: 10px 15px 10px 15px;
-  background-color: #00e1ff;
+  background-color: #00f7ff;
   color: white;
   font-size: 15px;
 }
