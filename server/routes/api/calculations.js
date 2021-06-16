@@ -32,12 +32,8 @@ router.delete('/:id', async (req, res) => {
 
 async function loadCalculationsCollection() {
   const client = await mongodb.MongoClient.connect(
-
     //Working Finnaly
     "mongodb+srv://Test:Test@vueexpress.7vzq3.mongodb.net/vueExpress",
-    
-  
-
     {
       //If we dont use it... it will throw warning...
       useUnifiedTopology: true,

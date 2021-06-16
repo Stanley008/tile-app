@@ -1,4 +1,4 @@
-import { calculation } from "got";
+// import { calculations } from "got";
 import axios from "axios";
 
 const url = "http://localhost:5000/api/calculations/";
@@ -21,20 +21,17 @@ reject(err);
     }
 });
 }
-
-
-    //Create Post will take only 1 parameter? 
-    static insertCalculations(text){
-return axios.calculation(url, {
-    
-    
-text
+    //Create Calculations
+    static insertCalculation(text){
+return axios.post(url, {
+text: text
     });
 }
-    //Delete Post
-    static deleteCalculation(id){
+    //Delete Calculations
+    static deleteCalculation(id) {
         return axios.delete(`${url}${id}`);
+        // return axios.delete(`${url}+${id}`);
+        // return axios.delete(url+id);
     }
-}
-
+};
 export default RouteService;

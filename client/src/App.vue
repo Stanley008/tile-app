@@ -1,22 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/tileCalculator.png">
-
-<h2> Tile Calculator to the Rescue.</h2>
+    <img alt="Tile Calculator logo" src="./assets/tileCalculator.png">
+    <h2> Tile Calculator to the Rescue.</h2>
 <h3> We are here to help you with your calculations.</h3>
-    
-    <Calculations msg="Welcome to Tile Calculator"/>
 
+    <!-- big CC  ? ? ?  -->
+<CalculationComponent>
+  </CalculationComponent>
   </div>
 </template>
 
 <script>
-import Calculations from './components/Calculations.vue'
+import CalculationComponent from './components/CalculationComponent.vue'
+// import Calculation from './components/CalculationComponent.vue'
 
 export default {
   name: 'App',
   components: {
-    Calculations
+    CalculationComponent
   }
 }
 </script>
@@ -28,6 +29,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #171d42;
-  margin-top: 60px;
+  margin-top: 65px;
 }
 </style>

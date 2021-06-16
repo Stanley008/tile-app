@@ -12,12 +12,15 @@
 <div class="calculations-container">
   <div class="calculation"
   v-for="(calculation, index) in calculations"
+  
   v-bind:item="calculation"
   v-bind:index="index"
   v-bind:key="calculation._id"
+  
+  v-on:dbclick="deleteCalculation(calculation._id)"
   >
-  {{`${calculation.createdAt.getHours()}:${calculation.createdAt.getMinutes()} ${calculation.createdAt.getDate()}.${calculation.createdAt.getMonth()+1}.${calculation.createdAt.getFullYear()}`}}
-  <p class="text"> {{calculation.text}}</p>
+  {{`${calculation.createdAt.getHours()}:${calculation.createdAt.getMinutes()} - ${calculation.createdAt.getDate()}.${calculation.createdAt.getMonth()+1}.${calculation.createdAt.getFullYear()}`}}
+  <p class="text"> {{ calculation.text }}</p>
   </div>
   </div>
     </div>
@@ -27,9 +30,8 @@
 <script>
 import RouteService from "../RouteService";
 
-
 export default {
-  name: 'Calculations',
+  name: 'CalculationComponent',
   data(){
     return {
       calculations: [],
@@ -45,10 +47,15 @@ this.calculations = await RouteService.getCalculations();
   }
 },
 methods: {
-async createCalculation(){
-  await RouteService.insertCalculation(this.text)
-  this.calculations = await RouteService.getCalculations();
-}
+  async createCalculation(){
+    await RouteService.insertCalculation(this.text);
+    this.calculations = await RouteService.getCalculations();
+    },
+    
+  // async deleteCalculation(id){
+  //   await RouteService.deleteCalculation(id)
+  //   this.calculations = await RouteService.getCalculations();
+  //   }
 },
 };
 </script>
