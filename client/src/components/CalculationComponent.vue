@@ -33,9 +33,10 @@
       <!-- not working -->
       <!-- {{ calculation[key] }} -->
       <!-- {{calculation[calculations]}} -->
+
       
-        {{`${calculation.createdAt.getHours()}:${calculation.createdAt.getMinutes()} - ${calculation.createdAt.getDate()}
-        .${calculation.createdAt.getMonth()+1}.${calculation.createdAt.getFullYear()}`}}
+      <!-- Minues need to be fixed 13:06 shows as 13:6... missing 0. Bug. -->
+        {{`${calculation.createdAt.getHours()}:${calculation.createdAt.getMinutes()} - ${calculation.createdAt.getDate()}.${calculation.createdAt.getMonth()+1}.${calculation.createdAt.getFullYear()}`}}
         <p class="roomName"> Room Name: {{ calculation.roomName }} </p>
         <p class="room"> Room Length: {{ calculation.roomLength }} cm</p>
         <p class="room"> Room Width: {{ calculation.roomWidth }} cm</p>
@@ -66,10 +67,10 @@ document.getElementById("demo").innerHTML = obj.name;
         <p class="roomName"> Floor Area: {{[[ calculation.roomLength * calculation.roomWidth - calculation.roomDeduction * 10000] * [calculation.tileAdjustment/100+1]]/10000}} m2</p>
        
         <p class="roomName"> Wall Area: {{ [[2 * calculation.roomLength * calculation.roomHeight + 2 * calculation.roomWidth * calculation.roomHeight] * [calculation.tileAdjustment/100+1]]/10000}} m2</p>
-        <!-- <p class="roomName"> Wall Area: {{ [[2 * calculation.roomLength * calculation.roomHeight + 2 * calculation.roomWidth * calculation.roomHeight - calculation.roomDeduction * 10000] * [calculation.tileAdjustment/100+1]]/10000}} m2</p> -->
-       
        
         <p class="roomName"> Total Area: {{[[2 * calculation.roomLength * calculation.roomHeight + 2 * calculation.roomWidth * calculation.roomHeight] * [calculation.tileAdjustment/100+1]]/10000 +[[ calculation.roomLength * calculation.roomWidth - calculation.roomDeduction * 10000] * [calculation.tileAdjustment/100+1]]/10000}} m2</p>
+
+        <p class="roomName"> Number of Tiles Needed: {{[[[2 * calculation.roomLength * calculation.roomHeight + 2 * calculation.roomWidth * calculation.roomHeight] * [calculation.tileAdjustment/100+1]]/10000 +[[ calculation.roomLength * calculation.roomWidth - calculation.roomDeduction * 10000] * [calculation.tileAdjustment/100+1]]/10000]/ [calculation.tileLength*calculation.tileWidth] * 10000}} pieces</p>
       </div>
     </div>
   </div>

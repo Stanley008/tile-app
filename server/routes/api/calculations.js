@@ -23,8 +23,7 @@ router.get('/', async (req, res) => {
 //   res.status(201).send({});
 // });
 
-// ADD caculation multiple... 
-/// change text to roomName...
+// ADD caculation multiple 
 router.post('/', async (req, res) => {
   const calculations = await loadCalculationsCollection();
   await calculations.insertOne({
@@ -38,11 +37,8 @@ router.post('/', async (req, res) => {
     tileWidth: req.body.tileWidth,
     tileGap: req.body.tileGap,
     tileAdjustment: req.body.tileAdjustment,
-
-    //number of pieces in a box? 
-    //price of a box of tiles
-    //calculations? 
-
+    tileBoxPieces: req.body.tileBoxPieces,
+    tileBoxPrice: req.body.tileBoxPrice,
     createdAt: new Date()
   });
   res.status(201).send({});
