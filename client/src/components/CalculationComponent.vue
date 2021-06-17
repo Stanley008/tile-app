@@ -2,7 +2,9 @@
   <div class="container">
     <div class="create-calculation">
       <label for="create-calculation"> Enter New Calculation Data: </label>
-      <input type="roomName" id="create-calculation" v-model="roomName" placeholder="Create Calculation">
+
+      <input type="roomName" id="create-calculation" v-model="text" placeholder="Create Calculation">
+      <!-- <input type="roomName" id="create-calculation" v-model="roomName" placeholder="Create Calculation"> -->
 <button v-on:click="createCalculation">Calculate</button>
     </div>
     <hr>
@@ -18,6 +20,9 @@
       >
       <!-- Minues need to be fixed 13:06 shows as 13:6... missing 0. Bug. -->
         {{`${calculation.createdAt.getHours()}:${calculation.createdAt.getMinutes()} - ${calculation.createdAt.getDate()}.${calculation.createdAt.getMonth()+1}.${calculation.createdAt.getFullYear()}`}}
+        
+        <p class="roomName"> TEST TEXT FIELD INPUT: {{ calculation.text }} </p>
+        
         <p class="roomName"> Room Name: {{ calculation.roomName }} </p>
         <p class="room"> Room Length: {{ calculation.roomLength }} cm</p>
         <p class="room"> Room Width: {{ calculation.roomWidth }} cm</p>
@@ -56,8 +61,9 @@ export default {
     return {
       calculations: [],
       error: "",
-      roomName: "",
-      roomLength: ""
+      text: ""
+      // roomName: "",
+      // roomLength: ""
     }
   },
   async created(){

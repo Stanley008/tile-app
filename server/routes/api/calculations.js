@@ -26,6 +26,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
   const calculations = await loadCalculationsCollection();
   await calculations.insertOne({
+    text: req.body.text,
     roomName: req.body.roomName,
     roomLength: req.body.roomLength,
     roomWidth: req.body.roomWidth,
