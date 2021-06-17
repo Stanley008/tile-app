@@ -13,11 +13,36 @@ router.get('/', async (req, res) => {
  // res.send("Testing");
 });
 
-// // Add Calculation
+// // Add Calculation Single... 
+// router.post('/', async (req, res) => {
+//   const calculations = await loadCalculationsCollection();
+//   await calculations.insertOne({
+//     text: req.body.text,
+//     createdAt: new Date()
+//   });
+//   res.status(201).send({});
+// });
+
+// ADD caculation multiple... 
+/// change text to roomName...
 router.post('/', async (req, res) => {
   const calculations = await loadCalculationsCollection();
   await calculations.insertOne({
     text: req.body.text,
+    roomLength: req.body.roomLength,
+    roomWidth: req.body.roomWidth,
+    roomHeight: req.body.roomHeight,
+    roomDeduction: req.body.roomDeduction,
+    tileName: req.body.tileName, 
+    tileLength: req.body.tileLength,
+    tileWidth: req.body.tileWidth,
+    tileGap: req.body.tileGap,
+    tileAdjustment: req.body.tileAdjustment,
+
+    //number of pieces in a box? 
+    //price of a box of tiles
+    //calculations? 
+
     createdAt: new Date()
   });
   res.status(201).send({});

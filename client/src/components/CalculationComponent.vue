@@ -7,21 +7,36 @@
 <button v-on:click="createCalculation">Calculate</button>
     </div>
 <!-- create calculations here -->
+<!-- <div v-for="k in Object.keys(a).sort()">{{k}}:{{a[k]}}</div> -->
+<!-- v-for="(calculation, index) in Object.keys(calculations).sort()"> {{calculation}}:{{calculations[calculation]}}  -->
+
+ <!-- <div v-for="calculation in calculations">
+    {{calculation[calculations]}}
+  </div> -->
+
+
     <hr>
     <h1>Latest Calculations</h1>
     <p class="error" v-if="error">{{error}}</p>
     <div class="calculations-container">
       <div class="calculation"
-        v-for="(calculation, index) in calculations"
+        v-for="(calculation, index) in calculations" 
+       
+         
         v-bind:item="calculation"
         v-bind:index="index"
         v-bind:key="calculation._id"
+            
         v-on:dblclick="deleteCalculation(calculation._id)"
       >
+      <!-- not working -->
+      <!-- {{ calculation[key] }} -->
+      <!-- {{calculation[calculations]}} -->
       
         {{`${calculation.createdAt.getHours()}:${calculation.createdAt.getMinutes()} - ${calculation.createdAt.getDate()}
         .${calculation.createdAt.getMonth()+1}.${calculation.createdAt.getFullYear()}`}}
         <p class="text"> {{ calculation.text }} </p>
+        <p class="roomLength"> {{ calculation.roomLength }} </p>
       </div>
     </div>
   </div>
@@ -37,7 +52,8 @@ export default {
     return {
       calculations: [],
       error: "",
-      text: ""
+      text: "",
+      roomLength: ""
     }
   },
   async created(){
@@ -94,6 +110,12 @@ div.created-at{
 }
 
 p.text{
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 0;
+}
+
+p.roomLength{
   font-size: 20px;
   font-weight: 800;
   margin-bottom: 0;

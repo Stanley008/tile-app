@@ -25,9 +25,22 @@ class RouteService {
     }
 
     //Create Calculations
-    static insertCalculation(text){
-        return axios.post(url, {text: text});
+    static insertCalculation(text, rooomLength ){
+        return axios.post(url, {text},  );
+        return axios.post(url, {roomLength},  );
     }
+
+
+    // text: req.body.text,
+    // roomLength: req.body.roomLength,
+    // roomWidth: req.body.roomWidth,
+    // roomHeight: req.body.roomHeight,
+    // roomDeduction: req.body.roomDeduction,
+    // tileLength: req.body.tileLength,
+    // tileWidth: req.body.tileWidth,
+    // tileGap: req.body.tileGap,
+    // tileAdjustment: req.body.tileAdjustment,
+
 
     //where is fault ? ? ? ?
     //Delete Calculations
