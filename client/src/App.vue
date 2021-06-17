@@ -3,8 +3,6 @@
     <img alt="Tile Calculator logo" src="./assets/tileCalculator.png">
     <h2> Tile Calculator to the Rescue.</h2>
 <h3> We are here to help you with your calculations.</h3>
-
-    <!-- big CC  ? ? ?  -->
 <CalculationComponent>
   </CalculationComponent>
   </div>
@@ -12,7 +10,6 @@
 
 <script>
 import CalculationComponent from './components/CalculationComponent.vue'
-// import Calculation from './components/CalculationComponent.vue'
 
 export default {
   name: 'App',

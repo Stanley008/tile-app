@@ -16,8 +16,6 @@ class RouteService {
                     }))
                 );
             } 
-            
-            
             catch (err) {
             reject(err);
             }
@@ -30,8 +28,6 @@ class RouteService {
         return axios.post(url, {roomName} );
         // return axios.post(url, {roomLength},  );
     }
-
-
     // text: req.body.text,
     // roomLength: req.body.roomLength,
     // roomWidth: req.body.roomWidth,
@@ -42,8 +38,6 @@ class RouteService {
     // tileGap: req.body.tileGap,
     // tileAdjustment: req.body.tileAdjustment,
 
-
-    //where is fault ? ? ? ?
     //Delete Calculations
     static deleteCalculation(id) {
         return axios.delete(`${url}${id}`);
