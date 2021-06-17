@@ -64,19 +64,19 @@ document.getElementById("demo").innerHTML = obj.name;
         </script> -->
         
 <!--  + gaps ? ? ? ?make them later...-->
-
+<hr>
 <!-- Total Room Deduction is always deducted from floor area. -->
-        <p class="roomName"> Floor Area: {{[[ calculation.roomLength * calculation.roomWidth - calculation.roomDeduction * 10000] * [calculation.tileAdjustment/100+1]]/10000}} m2</p>
+        <p class="roomName"> Floor Area: {{([[ calculation.roomLength * calculation.roomWidth - calculation.roomDeduction * 10000] * [calculation.tileAdjustment/100+1]]/10000).toFixed(2)}} m2</p>
        
-        <p class="roomName"> Wall Area: {{ [[2 * calculation.roomLength * calculation.roomHeight + 2 * calculation.roomWidth * calculation.roomHeight] * [calculation.tileAdjustment/100+1]]/10000}} m2</p>
+        <p class="roomName"> Wall Area: {{ ([[2 * calculation.roomLength * calculation.roomHeight + 2 * calculation.roomWidth * calculation.roomHeight] * [calculation.tileAdjustment/100+1]]/10000).toFixed(2)}} m2</p>
        
-        <p class="roomName"> Total Area: {{[[2 * calculation.roomLength * calculation.roomHeight + 2 * calculation.roomWidth * calculation.roomHeight] * [calculation.tileAdjustment/100+1]]/10000 +[[ calculation.roomLength * calculation.roomWidth - calculation.roomDeduction * 10000] * [calculation.tileAdjustment/100+1]]/10000}} m2</p>
+        <p class="roomName"> Total Area: {{ ([[2 * calculation.roomLength * calculation.roomHeight + 2 * calculation.roomWidth * calculation.roomHeight] * [calculation.tileAdjustment/100+1]]/10000 +[[ calculation.roomLength * calculation.roomWidth - calculation.roomDeduction * 10000] * [calculation.tileAdjustment/100+1]]/10000).toFixed(2)}} m2</p>
 
-        <p class="roomName"> Number of Tiles Needed: {{[[[2 * calculation.roomLength * calculation.roomHeight + 2 * calculation.roomWidth * calculation.roomHeight] * [calculation.tileAdjustment/100+1]]/10000 +[[ calculation.roomLength * calculation.roomWidth - calculation.roomDeduction * 10000] * [calculation.tileAdjustment/100+1]]/10000]/ [calculation.tileLength*calculation.tileWidth] * 10000}} Pieces</p>
+        <p class="roomName"> Number of Tiles Needed: {{ ([[[2 * calculation.roomLength * calculation.roomHeight + 2 * calculation.roomWidth * calculation.roomHeight] * [calculation.tileAdjustment/100+1]]/10000 +[[ calculation.roomLength * calculation.roomWidth - calculation.roomDeduction * 10000] * [calculation.tileAdjustment/100+1]]/10000]/ [calculation.tileLength*calculation.tileWidth] * 10000).toFixed(0)}} Pieces</p>
       
-       <p class="roomName"> Number of Tiles Boxes Needed: {{[[[[2 * calculation.roomLength * calculation.roomHeight + 2 * calculation.roomWidth * calculation.roomHeight] * [calculation.tileAdjustment/100+1]]/10000 +[[ calculation.roomLength * calculation.roomWidth - calculation.roomDeduction * 10000] * [calculation.tileAdjustment/100+1]]/10000]/ [calculation.tileLength*calculation.tileWidth] * 10000]/calculation.tileBoxPieces}} Boxes</p>
+       <p class="roomName"> Number of Tiles Boxes Needed: {{ ([[[[2 * calculation.roomLength * calculation.roomHeight + 2 * calculation.roomWidth * calculation.roomHeight] * [calculation.tileAdjustment/100+1]]/10000 +[[ calculation.roomLength * calculation.roomWidth - calculation.roomDeduction * 10000] * [calculation.tileAdjustment/100+1]]/10000]/ [calculation.tileLength*calculation.tileWidth] * 10000]/calculation.tileBoxPieces).toFixed(0)}} Boxes</p>
       
-      <p class="roomName"> Price of the Tiles: {{[[[[2 * calculation.roomLength * calculation.roomHeight + 2 * calculation.roomWidth * calculation.roomHeight] * [calculation.tileAdjustment/100+1]]/10000 +[[ calculation.roomLength * calculation.roomWidth - calculation.roomDeduction * 10000] * [calculation.tileAdjustment/100+1]]/10000]/ [calculation.tileLength*calculation.tileWidth] * 10000]/calculation.tileBoxPieces*calculation.tileBoxPrice}} CZK</p>
+      <p class="roomName"> Price of the Tiles: {{([[[[2 * calculation.roomLength * calculation.roomHeight + 2 * calculation.roomWidth * calculation.roomHeight] * [calculation.tileAdjustment/100+1]]/10000 +[[ calculation.roomLength * calculation.roomWidth - calculation.roomDeduction * 10000] * [calculation.tileAdjustment/100+1]]/10000]/ [calculation.tileLength*calculation.tileWidth] * 10000]/calculation.tileBoxPieces*calculation.tileBoxPrice).toFixed(0)}} CZK</p>
       </div>
     </div>
   </div>
