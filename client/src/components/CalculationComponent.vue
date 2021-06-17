@@ -3,7 +3,10 @@
     <div class="create-calculation">
       <label for="create-calculation"> Enter New Calculation Data: </label>
 
-      <input type="roomName" id="create-calculation" v-model="text" placeholder="Create Calculation">
+      <input type="text" id="create-calculation" v-model="text" placeholder="Create Test TEXT">
+      <input type="roomName" id="create-calculation" v-model="roomName" placeholder="Create Room">
+      <input type="roomLength" id="create-calculation" v-model="roomLength" placeholder="Length Room">
+        <!-- <input type="roomName" id="create-calculation" v-model="roomWidth" placeholder="Create Room"> -->
       <!-- <input type="roomName" id="create-calculation" v-model="roomName" placeholder="Create Calculation"> -->
 <button v-on:click="createCalculation">Calculate</button>
     </div>
@@ -61,10 +64,10 @@ export default {
     return {
       calculations: [],
       error: "",
-      text: ""
-      // roomName: "",
+      text: "",
+      roomName: "",
       // roomLength: ""
-    }
+    };
   },
   async created(){
     try {
@@ -74,8 +77,10 @@ this.calculations = await RouteService.getCalculations();
   }
 },
   methods: {
-    async createCalculation(){
-      await RouteService.insertCalculation(this.text);
+     async createCalculation(){
+      await RouteService.insertCalculation(this.text, this.roomName, this.roomLength);
+      ///should or not ? ? ? 
+      // await RouteService.insertCalculation(this.roomName);
       this.calculations = await RouteService.getCalculations();
     },
     

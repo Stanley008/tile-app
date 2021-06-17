@@ -19,7 +19,6 @@ const calculations = require('./routes/api/calculations');
 
 app.use('/api/calculations', calculations);
 
-//change port? 
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Server Start ${port}`));

@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
   //res.send("Testing");
 });
 
-// Add Calculation Single... 
+// Add Calculation Single 
 // router.post('/', async (req, res) => {
 //   const calculations = await loadCalculationsCollection();
 //   await calculations.insertOne({
@@ -29,16 +29,16 @@ router.post('/', async (req, res) => {
     text: req.body.text,
     roomName: req.body.roomName,
     roomLength: req.body.roomLength,
-    roomWidth: req.body.roomWidth,
-    roomHeight: req.body.roomHeight,
-    roomDeduction: req.body.roomDeduction,
-    tileName: req.body.tileName, 
-    tileLength: req.body.tileLength,
-    tileWidth: req.body.tileWidth,
-    tileGap: req.body.tileGap,
-    tileAdjustment: req.body.tileAdjustment,
-    tileBoxPieces: req.body.tileBoxPieces,
-    tileBoxPrice: req.body.tileBoxPrice,
+    // roomWidth: req.body.roomWidth,
+    // roomHeight: req.body.roomHeight,
+    // roomDeduction: req.body.roomDeduction,
+    // tileName: req.body.tileName, 
+    // tileLength: req.body.tileLength,
+    // tileWidth: req.body.tileWidth,
+    // tileGap: req.body.tileGap,
+    // tileAdjustment: req.body.tileAdjustment,
+    // tileBoxPieces: req.body.tileBoxPieces,
+    // tileBoxPrice: req.body.tileBoxPrice,
     createdAt: new Date()
   });
   res.status(201).send({
@@ -54,6 +54,7 @@ router.delete('/:id', async (req, res) => {
 
 async function loadCalculationsCollection() {
   const client = await mongodb.MongoClient.connect(
+
   // Working Connection to MongoDB
   "mongodb+srv://Test:Test@vueexpress.7vzq3.mongodb.net/vueExpress",
     {
@@ -61,6 +62,7 @@ async function loadCalculationsCollection() {
       useNewUrlParser: true,
     }
   );
+
 // Get Calculation Collection 
   return client.db('vueExpress').collection('calculations');
 }

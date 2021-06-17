@@ -28,13 +28,35 @@ class RouteService {
     // }
 
 
-    // OLD VERSION 1 INPUT
-    static insertCalculation(text) {
+    // // OLD VERSION 1 INPUT
+    // static insertCalculation(text, roomName, roomLength) {
+    //     return axios.post(url, {
+    //         text: text,
+
+    //         // text: text ? ?
+    //         roomName: roomName,
+    //         roomLength: roomLength
+    //         // roomWidth: roomWidth, 
+    //         // roomHeight: roomHeight, 
+    //         // roomDeduction: roomDeduction
+    //         // text: roomName
+    //     });
+    // }
+
+      // OLD VERSION 2 TRY //Manually works fine... adds correct values...  add more fields... 
+      static insertCalculation(text, roomName, roomLength) {
         return axios.post(url, {
-            text: text
-            // text: roomName
+            text: text,
+            roomName: roomName,
+            roomLength: roomLength,
         });
     }
+
+    //  //Create Calculations
+    // static insertCalculation(text, roomName, roomLength, roomWidth, roomHeight, roomDeduction, tileName, tileLength, tileWidth, tileGap, tileAdjustment, tileBoxPieces, tileBoxPrice){
+    //     return axios.post(url, {roomLength:roomLength});
+    // }
+
 
 
     // <p class="roomName"> Room Name: {{ calculation.roomName }} </p>
