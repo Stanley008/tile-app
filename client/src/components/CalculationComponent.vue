@@ -1,81 +1,45 @@
 <template>
   <div class="container">
-    
     <div class="create-calculation">
       <label for="create-calculation"> Enter New Calculation Data: </label>
       <input type="roomName" id="create-calculation" v-model="roomName" placeholder="Create Calculation">
 <button v-on:click="createCalculation">Calculate</button>
     </div>
-<!-- create calculations here -->
-<!-- <div v-for="k in Object.keys(a).sort()">{{k}}:{{a[k]}}</div> -->
-<!-- v-for="(calculation, index) in Object.keys(calculations).sort()"> {{calculation}}:{{calculations[calculation]}}  -->
-
- <!-- <div v-for="calculation in calculations">
-    {{calculation[calculations]}}
-  </div> -->
-
-
     <hr>
     <h1>Latest Calculations</h1>
     <p class="error" v-if="error">{{error}}</p>
     <div class="calculations-container">
-      
       <div class="calculation"
         v-for="(calculation, index) in calculations" 
-       
-         
         v-bind:item="calculation"
         v-bind:index="index"
         v-bind:key="calculation._id"
-            
         v-on:dblclick="deleteCalculation(calculation._id)"
       >
-      <!-- not working -->
-      <!-- {{ calculation[key] }} -->
-      <!-- {{calculation[calculations]}} -->
-
-      
       <!-- Minues need to be fixed 13:06 shows as 13:6... missing 0. Bug. -->
         {{`${calculation.createdAt.getHours()}:${calculation.createdAt.getMinutes()} - ${calculation.createdAt.getDate()}.${calculation.createdAt.getMonth()+1}.${calculation.createdAt.getFullYear()}`}}
         <p class="roomName"> Room Name: {{ calculation.roomName }} </p>
         <p class="room"> Room Length: {{ calculation.roomLength }} cm</p>
         <p class="room"> Room Width: {{ calculation.roomWidth }} cm</p>
         <p class="room"> Room Height: {{ calculation.roomHeight }} cm</p>
-
-        
         <p class="room"> Total Room Deduction: {{ calculation.roomDeduction }} m2</p>
-
         <p class="roomName"> Tile Name: {{ calculation.tileName }} </p>
         <p class="room"> Tile Length: {{ calculation.tileLength }} cm</p>
         <p class="room"> Tile Width: {{ calculation.tileWidth }} cm</p>
         <!-- <p class="room"> Tile Gap: {{ calculation.tileGap }} cm</p> -->
-        <p class="room"> Tile Adjustment: {{ calculation.tileAdjustment }} %</p>
+        <p class="room"> Tile Adjustment Add: {{ calculation.tileAdjustment }} %</p>
         <p class="room"> Tile Pieces in a Box: {{ calculation.tileBoxPieces }}</p>
         <p class="room"> Tile Box Price: {{ calculation.tileBoxPrice }} CZK</p>
 
-        <p>TESTING PURPOSE CALCULATIONS</p>
-
-
-<!-- <script>
-document.getElementById("demo").innerHTML = obj.name;
-</script> -->
-        <!-- <script>
-        var total = parseFloat(firstNumber) + parseFloat(secondNumber);
-        </script> -->
-        
-<!--  + gaps ? ? ? ?make them later...-->
 <hr>
+<p class="roomName">CALCULATIONS</p>
+<!-- Gaps will be added in version v2-->
 <!-- Total Room Deduction is always deducted from floor area. -->
         <p class="roomName"> Floor Area: {{([[ calculation.roomLength * calculation.roomWidth - calculation.roomDeduction * 10000] * [calculation.tileAdjustment/100+1]]/10000).toFixed(2)}} m2</p>
-       
         <p class="roomName"> Wall Area: {{ ([[2 * calculation.roomLength * calculation.roomHeight + 2 * calculation.roomWidth * calculation.roomHeight] * [calculation.tileAdjustment/100+1]]/10000).toFixed(2)}} m2</p>
-       
         <p class="roomName"> Total Area: {{ ([[2 * calculation.roomLength * calculation.roomHeight + 2 * calculation.roomWidth * calculation.roomHeight] * [calculation.tileAdjustment/100+1]]/10000 +[[ calculation.roomLength * calculation.roomWidth - calculation.roomDeduction * 10000] * [calculation.tileAdjustment/100+1]]/10000).toFixed(2)}} m2</p>
-
         <p class="roomName"> Number of Tiles Needed: {{ ([[[2 * calculation.roomLength * calculation.roomHeight + 2 * calculation.roomWidth * calculation.roomHeight] * [calculation.tileAdjustment/100+1]]/10000 +[[ calculation.roomLength * calculation.roomWidth - calculation.roomDeduction * 10000] * [calculation.tileAdjustment/100+1]]/10000]/ [calculation.tileLength*calculation.tileWidth] * 10000).toFixed(0)}} Pieces</p>
-      
        <p class="roomName"> Number of Tiles Boxes Needed: {{ ([[[[2 * calculation.roomLength * calculation.roomHeight + 2 * calculation.roomWidth * calculation.roomHeight] * [calculation.tileAdjustment/100+1]]/10000 +[[ calculation.roomLength * calculation.roomWidth - calculation.roomDeduction * 10000] * [calculation.tileAdjustment/100+1]]/10000]/ [calculation.tileLength*calculation.tileWidth] * 10000]/calculation.tileBoxPieces).toFixed(0)}} Boxes</p>
-      
       <p class="roomName"> Price of the Tiles: {{([[[[2 * calculation.roomLength * calculation.roomHeight + 2 * calculation.roomWidth * calculation.roomHeight] * [calculation.tileAdjustment/100+1]]/10000 +[[ calculation.roomLength * calculation.roomWidth - calculation.roomDeduction * 10000] * [calculation.tileAdjustment/100+1]]/10000]/ [calculation.tileLength*calculation.tileWidth] * 10000]/calculation.tileBoxPieces*calculation.tileBoxPrice).toFixed(0)}} CZK</p>
       </div>
     </div>
