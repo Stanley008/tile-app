@@ -40,12 +40,14 @@
         <p class="room"> Room Length: {{ calculation.roomLength }} cm</p>
         <p class="room"> Room Width: {{ calculation.roomWidth }} cm</p>
         <p class="room"> Room Height: {{ calculation.roomHeight }} cm</p>
-        <p class="room"> Room deduction: {{ calculation.roomDeduction }} m2</p>
+
+        
+        <p class="room"> Total Room Deduction: {{ calculation.roomDeduction }} m2</p>
 
         <p class="roomName"> Tile Name: {{ calculation.tileName }} </p>
         <p class="room"> Tile Length: {{ calculation.tileLength }} cm</p>
         <p class="room"> Tile Width: {{ calculation.tileWidth }} cm</p>
-        <p class="room"> Tile Gap: {{ calculation.tileGap }} cm</p>
+        <!-- <p class="room"> Tile Gap: {{ calculation.tileGap }} cm</p> -->
         <p class="room"> Tile Adjustment: {{ calculation.tileAdjustment }} %</p>
 
         <p>TESTING PURPOSE CALCULATIONS</p>
@@ -58,10 +60,16 @@ document.getElementById("demo").innerHTML = obj.name;
         var total = parseFloat(firstNumber) + parseFloat(secondNumber);
         </script> -->
         
+<!--  + gaps ? ? ? ?make them later...-->
 
-        <p class="roomName"> Floor Area: {{ calculation.roomLength / calculation.roomWidth }} m2</p>
-        <p class="roomName"> Room (Floor+Walls) Area: {{ calculation.roomLength / calculation.roomWidth }} m2</p>
-
+<!-- Total Room Deduction is always deducted from floor area. -->
+        <p class="roomName"> Floor Area: {{[[ calculation.roomLength * calculation.roomWidth - calculation.roomDeduction * 10000] * [calculation.tileAdjustment/100+1]]/10000}} m2</p>
+       
+        <p class="roomName"> Wall Area: {{ [[2 * calculation.roomLength * calculation.roomHeight + 2 * calculation.roomWidth * calculation.roomHeight] * [calculation.tileAdjustment/100+1]]/10000}} m2</p>
+        <!-- <p class="roomName"> Wall Area: {{ [[2 * calculation.roomLength * calculation.roomHeight + 2 * calculation.roomWidth * calculation.roomHeight - calculation.roomDeduction * 10000] * [calculation.tileAdjustment/100+1]]/10000}} m2</p> -->
+       
+       
+        <p class="roomName"> Total Area: {{[[2 * calculation.roomLength * calculation.roomHeight + 2 * calculation.roomWidth * calculation.roomHeight] * [calculation.tileAdjustment/100+1]]/10000 +[[ calculation.roomLength * calculation.roomWidth - calculation.roomDeduction * 10000] * [calculation.tileAdjustment/100+1]]/10000}} m2</p>
       </div>
     </div>
   </div>
