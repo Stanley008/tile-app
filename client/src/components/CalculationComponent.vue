@@ -3,7 +3,7 @@
     
     <div class="create-calculation">
       <label for="create-calculation"> Enter New Calculation Data: </label>
-      <input type="text" id="create-calculation" v-model="text" placeholder="Create Calculation">
+      <input type="roomName" id="create-calculation" v-model="roomName" placeholder="Create Calculation">
 <button v-on:click="createCalculation">Calculate</button>
     </div>
 <!-- create calculations here -->
@@ -19,6 +19,7 @@
     <h1>Latest Calculations</h1>
     <p class="error" v-if="error">{{error}}</p>
     <div class="calculations-container">
+      
       <div class="calculation"
         v-for="(calculation, index) in calculations" 
        
@@ -35,8 +36,32 @@
       
         {{`${calculation.createdAt.getHours()}:${calculation.createdAt.getMinutes()} - ${calculation.createdAt.getDate()}
         .${calculation.createdAt.getMonth()+1}.${calculation.createdAt.getFullYear()}`}}
-        <p class="text"> {{ calculation.text }} </p>
-        <p class="roomLength"> {{ calculation.roomLength }} </p>
+        <p class="roomName"> Room Name: {{ calculation.roomName }} </p>
+        <p class="room"> Room Length: {{ calculation.roomLength }} cm</p>
+        <p class="room"> Room Width: {{ calculation.roomWidth }} cm</p>
+        <p class="room"> Room Height: {{ calculation.roomHeight }} cm</p>
+        <p class="room"> Room deduction: {{ calculation.roomDeduction }} m2</p>
+
+        <p class="roomName"> Tile Name: {{ calculation.tileName }} </p>
+        <p class="room"> Tile Length: {{ calculation.tileLength }} cm</p>
+        <p class="room"> Tile Width: {{ calculation.tileWidth }} cm</p>
+        <p class="room"> Tile Gap: {{ calculation.tileGap }} cm</p>
+        <p class="room"> Tile Adjustment: {{ calculation.tileAdjustment }} %</p>
+
+        <p>TESTING PURPOSE CALCULATIONS</p>
+
+
+<!-- <script>
+document.getElementById("demo").innerHTML = obj.name;
+</script> -->
+        <!-- <script>
+        var total = parseFloat(firstNumber) + parseFloat(secondNumber);
+        </script> -->
+        
+
+        <p class="roomName"> Floor Area: {{ calculation.roomLength / calculation.roomWidth }} m2</p>
+        <p class="roomName"> Room (Floor+Walls) Area: {{ calculation.roomLength / calculation.roomWidth }} m2</p>
+
       </div>
     </div>
   </div>
@@ -52,7 +77,7 @@ export default {
     return {
       calculations: [],
       error: "",
-      text: "",
+      roomName: "",
       roomLength: ""
     }
   },
@@ -109,15 +134,15 @@ div.created-at{
   font-size: 15px;
 }
 
-p.text{
-  font-size: 20px;
+p.roomName{
+  font-size: 18px;
   font-weight: 800;
   margin-bottom: 0;
 }
 
-p.roomLength{
-  font-size: 20px;
-  font-weight: 800;
+p.room{
+  font-size: 14px;
+  font-weight: 400;
   margin-bottom: 0;
 }
 </style>

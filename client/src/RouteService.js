@@ -25,9 +25,10 @@ class RouteService {
     }
 
     //Create Calculations
-    static insertCalculation(text, rooomLength ){
-        return axios.post(url, {text},  );
-        return axios.post(url, {roomLength},  );
+    // static insertCalculation(roomName, rooomLength ){
+    static insertCalculation(roomName){
+        return axios.post(url, {roomName} );
+        // return axios.post(url, {roomLength},  );
     }
 
 
