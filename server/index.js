@@ -11,7 +11,7 @@ app.use(express.urlencoded({
   extended: true
 }));
 
-//Deprecated
+// Deprecated
 // app.use(bodyParser.json());
 app.use(cors());
 
@@ -19,8 +19,8 @@ const calculations = require('./routes/api/calculations');
 
 app.use('/api/calculations', calculations);
 
-//Herokou Product
-if(proocess.env.NODE_ENV === "product") {
+// Herokou Product
+if(process.env.NODE_ENV === "product") {
   app.use(express.static(__dirname + "/public"));
   app.get(/.*/, (req, res) => res.sendFile(__dirname + "/public/index.html"));
 }
