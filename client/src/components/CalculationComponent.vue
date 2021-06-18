@@ -5,6 +5,7 @@
       <p>Hints: </p>
       <p>Tile Adjustment - It is advisory to order 10% more for waste, bad cuts etc.</p>
       <p>Tile Adjustment - If diagonal pattern is chosen a 20% adjustment is advisory.</p>    
+      <p>Your new calculation is at the bottom.</p>
       <p>To delete a calculation double click on it.</p>
       <hr>
       <label for="create-calculation"> Enter New Calculation Data: </label>
