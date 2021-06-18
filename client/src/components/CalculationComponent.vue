@@ -14,6 +14,7 @@
       <!-- <input type="text" id="create-calculation" v-model="text" placeholder="Create Test TEXT"> -->
       <input type="roomName" id="create-calculation" v-model="roomName" placeholder="Room Name">
       <br>
+      <br>
       <input type="roomName" id="create-calculation" v-model="roomLength" placeholder="Room Length cm">
       <input type="roomName" id="create-calculation" v-model="roomWidth" placeholder="Room Width cm">
       <input type="roomName" id="create-calculation" v-model="roomHeight" placeholder="Room Height cm">
@@ -21,7 +22,8 @@
       <br>
       <br>
       <input type="roomName" id="create-calculation" v-model="tileName" placeholder="Tile Name">
-      <p></p>
+      <br>
+      <br>
       <input type="roomName" id="create-calculation" v-model="tileLength" placeholder="Tile Length cm">
       <input type="roomName" id="create-calculation" v-model="tileWidth" placeholder="Tile Width cm">
       <!-- Gap Feature -->
