@@ -2,23 +2,31 @@
   <div class="container">
     <div class="create-calculation">
       <label for="create-calculation"> Enter New Calculation Data: </label>
-      <input type="text" id="create-calculation" v-model="text" placeholder="Create Test TEXT">
-      <input type="roomName" id="create-calculation" v-model="roomName" placeholder="Create Room">
-      <input type="roomLength" id="create-calculation" v-model="roomLength" placeholder="Length Room">
+      <br>
+      <br>
+
+      <!-- Test Purpose Text -->
+      <!-- <input type="text" id="create-calculation" v-model="text" placeholder="Create Test TEXT"> -->
+      <input type="roomName" id="create-calculation" v-model="roomName" placeholder="Room Name">
+      <input type="roomName" id="create-calculation" v-model="roomLength" placeholder="Room Length">
       <input type="roomName" id="create-calculation" v-model="roomWidth" placeholder="Room Width">
       <input type="roomName" id="create-calculation" v-model="roomHeight" placeholder="Room Height">
       <input type="roomName" id="create-calculation" v-model="roomDeduction" placeholder="Room Deduction">
+      <br>
+      <br>
       <input type="roomName" id="create-calculation" v-model="tileName" placeholder="Tile Name">
       <input type="roomName" id="create-calculation" v-model="tileLength" placeholder="Tile Length">
       <input type="roomName" id="create-calculation" v-model="tileWidth" placeholder="Tile Width">
       <!-- <input type="roomName" id="create-calculation" v-model="tileGap" placeholder="Tile Gap"> -->
-      <input type="roomName" id="create-calculation" v-model="tileAdjustment" placeholder="TileAdjustment">
+      <input type="roomName" id="create-calculation" v-model="tileAdjustment" placeholder="Tile Adjustment">
       <input type="roomName" id="create-calculation" v-model="tileBoxPieces" placeholder="Tile Box Pieces">
       <input type="roomName" id="create-calculation" v-model="tileBoxPrice" placeholder="Tile Box Price">
+      <br>
+      <br>
       <button v-on:click="createCalculation">Calculate</button>
     </div>
 
-    
+
     <hr>
     <h1>Latest Calculations</h1>
     <p class="error" v-if="error">{{error}}</p>
