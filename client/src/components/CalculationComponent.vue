@@ -1,31 +1,41 @@
 <template>
   <div class="container">
     <div class="create-calculation">
+
+
+<hr>
+<p>Hints: </p>
+<p>Tile Adjustment - It is advisory to order 10% more for waste, bad cuts etc.</p>
+<p>Tile Adjustment - If diagonal pattern is chosen a 20% adjustment is advisory.</p>
+<p>To delete a calculation doubble click on it.</p>
+
+
+       <hr>
       <label for="create-calculation"> Enter New Calculation Data: </label>
       <br>
       <br>
-
       <!-- Test Purpose Text -->
       <!-- <input type="text" id="create-calculation" v-model="text" placeholder="Create Test TEXT"> -->
       <input type="roomName" id="create-calculation" v-model="roomName" placeholder="Room Name">
-      <input type="roomName" id="create-calculation" v-model="roomLength" placeholder="Room Length">
-      <input type="roomName" id="create-calculation" v-model="roomWidth" placeholder="Room Width">
-      <input type="roomName" id="create-calculation" v-model="roomHeight" placeholder="Room Height">
-      <input type="roomName" id="create-calculation" v-model="roomDeduction" placeholder="Room Deduction">
+      <p></p>
+      <input type="roomName" id="create-calculation" v-model="roomLength" placeholder="Room Length cm">
+      <input type="roomName" id="create-calculation" v-model="roomWidth" placeholder="Room Width cm">
+      <input type="roomName" id="create-calculation" v-model="roomHeight" placeholder="Room Height cm">
+      <input type="roomName" id="create-calculation" v-model="roomDeduction" placeholder="Room Deduction m2">
       <br>
       <br>
       <input type="roomName" id="create-calculation" v-model="tileName" placeholder="Tile Name">
-      <input type="roomName" id="create-calculation" v-model="tileLength" placeholder="Tile Length">
-      <input type="roomName" id="create-calculation" v-model="tileWidth" placeholder="Tile Width">
+      <p></p>
+      <input type="roomName" id="create-calculation" v-model="tileLength" placeholder="Tile Length cm">
+      <input type="roomName" id="create-calculation" v-model="tileWidth" placeholder="Tile Width cm">
       <!-- <input type="roomName" id="create-calculation" v-model="tileGap" placeholder="Tile Gap"> -->
-      <input type="roomName" id="create-calculation" v-model="tileAdjustment" placeholder="Tile Adjustment">
-      <input type="roomName" id="create-calculation" v-model="tileBoxPieces" placeholder="Tile Box Pieces">
-      <input type="roomName" id="create-calculation" v-model="tileBoxPrice" placeholder="Tile Box Price">
+      <input type="roomName" id="create-calculation" v-model="tileAdjustment" placeholder="Tile Adjustment %">
+      <input type="roomName" id="create-calculation" v-model="tileBoxPieces" placeholder="Tiles in Box Pieces">
+      <input type="roomName" id="create-calculation" v-model="tileBoxPrice" placeholder="Tile Box Price CZK">
       <br>
       <br>
       <button v-on:click="createCalculation">Calculate</button>
     </div>
-
 
     <hr>
     <h1>Latest Calculations</h1>
@@ -41,7 +51,9 @@
       <!-- Minues need to be fixed 13:06 shows as 13:6... missing 0. Bug. -->
         {{`${calculation.createdAt.getHours()}:${calculation.createdAt.getMinutes()} - ${calculation.createdAt.getDate()}.${calculation.createdAt.getMonth()+1}.${calculation.createdAt.getFullYear()}`}}
         
-        <p class="roomName"> TEST TEXT FIELD INPUT: {{ calculation.text }} </p>
+
+        <!-- Test Purpose Text -->
+        <!-- <p class="roomName"> TEST TEXT FIELD INPUT: {{ calculation.text }} </p> -->
         
         <p class="roomName"> Room Name: {{ calculation.roomName }} </p>
         <p class="room"> Room Length: {{ calculation.roomLength }} cm</p>
