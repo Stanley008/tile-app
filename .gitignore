@@ -1,8 +1,8 @@
 # Client Upload
-/client
+# /client
 
 # Node Modules Upload
-/node_modules
+# /node_modules
 server/routes/.DS_Store
 server/.DS_Store
 .DS_Store
