@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
   const calculations = await loadCalculationsCollection();
   res.send(await calculations.find({}).toArray());
   //Test Purpose Only
-  //res.send("Testing");
+  //res.send("Testing"); 
 });
 
 // Add Calculation Single 
