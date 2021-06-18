@@ -44,13 +44,24 @@ class RouteService {
     // }
 
       // OLD VERSION 2 TRY //Manually works fine... adds correct values...  add more fields... 
-      static insertCalculation(text, roomName, roomLength) {
+      static insertCalculation(text, roomName, roomLength, roomWidth, roomHeight, roomDeduction, tileName, tileLength, tileWidth, tileGap, tileAdjustment, tileBoxPieces, tileBoxPrice) {
         return axios.post(url, {
             text: text,
             roomName: roomName,
             roomLength: roomLength,
+            roomWidth: roomWidth,
+            roomHeight: roomHeight,
+            roomDeduction: roomDeduction,
+            tileName: tileName,
+            tileLength: tileLength,
+            tileWidth: tileWidth,
+            tileGap: tileGap,
+            tileAdjustment: tileAdjustment,
+            tileBoxPieces: tileBoxPieces,
+            tileBoxPrice: tileBoxPrice
         });
     }
+
 
     //  //Create Calculations
     // static insertCalculation(text, roomName, roomLength, roomWidth, roomHeight, roomDeduction, tileName, tileLength, tileWidth, tileGap, tileAdjustment, tileBoxPieces, tileBoxPrice){

@@ -2,14 +2,23 @@
   <div class="container">
     <div class="create-calculation">
       <label for="create-calculation"> Enter New Calculation Data: </label>
-
       <input type="text" id="create-calculation" v-model="text" placeholder="Create Test TEXT">
       <input type="roomName" id="create-calculation" v-model="roomName" placeholder="Create Room">
       <input type="roomLength" id="create-calculation" v-model="roomLength" placeholder="Length Room">
-        <!-- <input type="roomName" id="create-calculation" v-model="roomWidth" placeholder="Create Room"> -->
-      <!-- <input type="roomName" id="create-calculation" v-model="roomName" placeholder="Create Calculation"> -->
-<button v-on:click="createCalculation">Calculate</button>
+      <input type="roomName" id="create-calculation" v-model="roomWidth" placeholder="Room Width">
+      <input type="roomName" id="create-calculation" v-model="roomHeight" placeholder="Room Height">
+      <input type="roomName" id="create-calculation" v-model="roomDeduction" placeholder="Room Deduction">
+      <input type="roomName" id="create-calculation" v-model="tileName" placeholder="Tile Name">
+      <input type="roomName" id="create-calculation" v-model="tileLength" placeholder="Tile Length">
+      <input type="roomName" id="create-calculation" v-model="tileWidth" placeholder="Tile Width">
+      <!-- <input type="roomName" id="create-calculation" v-model="tileGap" placeholder="Tile Gap"> -->
+      <input type="roomName" id="create-calculation" v-model="tileAdjustment" placeholder="TileAdjustment">
+      <input type="roomName" id="create-calculation" v-model="tileBoxPieces" placeholder="Tile Box Pieces">
+      <input type="roomName" id="create-calculation" v-model="tileBoxPrice" placeholder="Tile Box Price">
+      <button v-on:click="createCalculation">Calculate</button>
     </div>
+
+    
     <hr>
     <h1>Latest Calculations</h1>
     <p class="error" v-if="error">{{error}}</p>
@@ -78,12 +87,13 @@ this.calculations = await RouteService.getCalculations();
 },
   methods: {
      async createCalculation(){
-      await RouteService.insertCalculation(this.text, this.roomName, this.roomLength);
+      await RouteService.insertCalculation(this.text, this.roomName, this.roomLength, this.roomWidth, this.roomHeight, this.roomDeduction, this.tileName, this.tileLength, this.tileWidth, this.tileGap, this.tileAdjustment, this.tileBoxPieces, this.tileBoxPrice);
       ///should or not ? ? ? 
       // await RouteService.insertCalculation(this.roomName);
       this.calculations = await RouteService.getCalculations();
     },
     
+
     async deleteCalculation(id){
       await RouteService.deleteCalculation(id)
       // await RouteService.deletePost(id)
