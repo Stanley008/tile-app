@@ -14,6 +14,7 @@ Heroku Link Database: https://tile-application.herokuapp.com/api/calculations
 vue: ^2.6.11
 
 ## Backend
+Javascript
 MongoDB.live - cluster with sandbbobx environment
 
 ## Deployment
