@@ -19,6 +19,12 @@ const calculations = require('./routes/api/calculations');
 
 app.use('/api/calculations', calculations);
 
+//Herokou Product
+if(proocess.env.NODE_ENV === "product") {
+  app.use(express.static(__dirname + "/public"));
+  app.get(/.*/, (req, res) => res.sendFile(__dirname + "/public/index.html"));
+}
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Server Start ${port}`));
