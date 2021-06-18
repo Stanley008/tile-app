@@ -48,21 +48,20 @@ router.post('/', async (req, res) => {
 // Delete Calculation
 router.delete('/:id', async (req, res) => {
   const calculations = await loadCalculationsCollection();
-  await calculations.deleteOne({ _id: new mongodb.ObjectID(req.params.id) });
+  await calculations.deleteOne({ _id: new mongodb.ObjectID(req.params.id) 
+  });
   res.status(200).send({});
 });
 
 async function loadCalculationsCollection() {
   const client = await mongodb.MongoClient.connect(
-
-  // Working Connection to MongoDB
+  // Connection to MongoDB
   "mongodb+srv://Test:Test@vueexpress.7vzq3.mongodb.net/vueExpress",
     {
       useUnifiedTopology: true,
       useNewUrlParser: true,
     }
   );
-
 // Get Calculation Collection 
   return client.db('vueExpress').collection('calculations');
 }
