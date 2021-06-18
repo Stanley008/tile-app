@@ -4,7 +4,7 @@ This application helps the installer to calculate room and tile information. It 
 
 User is provided with useful hints how to adjust the tile amount percentage and how the calculations are deleted. 
 
-Github Link: https://github.com/Stanley008/tile-app
+GitHub Link: https://github.com/Stanley008/tile-app
 
 Heroku Link: https://tile-application.herokuapp.com/
 
