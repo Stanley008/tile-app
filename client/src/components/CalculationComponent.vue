@@ -12,7 +12,7 @@
       <br>
       <br>
       <!-- Test Purpose Text -->
-      <!-- <input type="text" id="create-calculation" v-model="text" placeholder="Create Test TEXT"> -->
+      <!-- <input type="text" id="create-calculation" v-model="text" placeholder="CREATE TEST TEXT"> -->
       <input type="roomName" id="create-calculation" v-model="roomName" placeholder="Room Name">
       <br>
       <br>
