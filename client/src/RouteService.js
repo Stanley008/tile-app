@@ -3,8 +3,9 @@ import axios from "axios";
 // Local Use
 // const url = "http://localhost:5000/api/calculations/";
 
-//Heroku Use
-const url = "/api/calculations/";
+// Heroku Use
+// const url = "/api/calculations/";
+const url = "api/calculations/";
 
 class RouteService {
     // Get Calculations
