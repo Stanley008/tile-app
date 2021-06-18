@@ -10,6 +10,15 @@ Heroku Link: https://tile-application.herokuapp.com/
 
 Heroku Link Database: https://tile-application.herokuapp.com/api/calculations
 
+## Frontend
+vue: ^2.6.11
+
+## Backend
+MongoDB.live - cluster with sandbbobx environment
+
+## Deployment
+Heroku PaaS
+
 ## Dependencies
 axios: ^0.21.1
 body-parser: ^1.19.0
